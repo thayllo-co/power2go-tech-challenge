@@ -1,0 +1,57 @@
+.card-wrapper {
+    background-color: #FFC221;
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 250px;
+    cursor: pointer;
+    box-shadow: 0px 3px 6px #00000029 ;
+}
+
+#name,
+#capital,
+#population,
+#currency,
+#language {
+    margin: 0;
+    color: #001E4D;
+    text-align: center;
+}
+
+#name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#capital {
+    font-style: italic;
+}
+
+#population,
+#currency,
+#language {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+#flag {
+    height: 100px;
+    width: 150px;
+    display: flex;
+    margin: 4px auto;
+}
+
+#info-icon {
+    height: 15px;
+    width: auto;
+}
+
+.info-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 4px 0px;
+}
+
+.info-row p {
+    padding-left: 8px;
+}
