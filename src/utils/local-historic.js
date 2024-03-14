@@ -19,13 +19,13 @@ export const addSearchToHistoric = (text, results) => {
 
   if (restoredHistoric) {
     // Adiciona item ao histórico atual
-    restoredHistoric.push(historic);
+    restoredHistoric.unshift(historic);
     localStorage.setItem('historic', JSON.stringify(restoredHistoric));
   }
   else {
     // Cria um novo histórico
     let historicArray = [];
-    historicArray.push(historic);
+    historicArray.unshift(historic);
     localStorage.setItem('historic', JSON.stringify(historicArray));
   }
 }
