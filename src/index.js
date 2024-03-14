@@ -5,7 +5,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/home/home';
 import Consult from './pages/consult/consult';
 import Historic from './pages/historic/historic';
-import 'react-toastify/dist/ReactToastify.css'; //CSS necessário para usar a biblioteca react-toastify
+
+import { ConsultContextProvider } from './utils/consult-context';
 
 // Criando rota para poder navegar usando caminhos na URL
 const router = createBrowserRouter([
@@ -26,6 +27,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} /> {/*  Implementa a rota no usando um provedor no componente principal */}
+    <ConsultContextProvider>
+      <RouterProvider router={router} /> {/*  Implementa a rota no usando um provedor no componente principal */}
+    </ConsultContextProvider>
   </React.StrictMode>
 );

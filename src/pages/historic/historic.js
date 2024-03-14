@@ -1,6 +1,7 @@
 import './historic.css';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ConsultContext } from '../../utils/consult-context';
 import { getHistoric } from '../../utils/local-historic';
 import Header from '../../components/header/header';
 import Table from '../../components/table/table';
@@ -8,14 +9,13 @@ import IconButton from '../../components/icon-button/icon-button';
 import PagePlaceholder from '../../components/page-placeholder/page-placeholder';
 
 
-function Historic() {
+const Historic = () => {
 
-  // Hook de histórico da página
-  const [historicArray, setHistoricArray] = useState([]);
+  const [historicArray, setHistoricArray] = useState([]); // Hook de histórico da página
+  const { restoreSearch } = useContext(ConsultContext); // Hook para usar restoreSearch do contexto
+  const navigate = useNavigate(); // Hook de navegação
 
-  // Hook de navegação para passar parâmetros
-  const navigate = useNavigate();
-
+  // Inicializa o histórico de buscas
   useEffect(() => {
     mountHistoric();
   }, []);
@@ -25,12 +25,14 @@ function Historic() {
 
     // Loop pelo array de respostas para formatar data e botão de consulta
     let restoredHistoric = getHistoric() || [];
-    // if (restoredHistoric)
     restoredHistoric = restoredHistoric.map((item) => {
       item.date = new Date(item.date).toLocaleString();
       item.resume =
         <IconButton
-          onClick={() => navigate('/consult', { state: { search: item.text } })}
+          onClick={() => {
+            restoreSearch(item.text);
+            navigate('/consult');
+          }}
           icon='search' />
       return item;
     });
@@ -46,7 +48,7 @@ function Historic() {
 
       <Header title='Histórico' parentPath={'/consult'} />
 
-      <div id="historic-table">
+      <div id='historic-table'>
 
         {(historicArray?.length <= 1) && <PagePlaceholder />}
 
