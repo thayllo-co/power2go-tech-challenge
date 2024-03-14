@@ -21,7 +21,7 @@ const Button = ({ label, type, onClick, linkPath, exportContent }) => {
   // Verifica se o botão é de exportação ou navegação
   if (type === 'export' && exportContent?.length > 0) {
     return (
-      <CSVLink className='button-link' data={exportContent} separator={"|"} filename={'Search_Results_' + Date.now()}>
+      <CSVLink className='button-link' data={exportContent} separator={'|'} filename={'Search_Results_' + Date.now()}>
         <ButtonContent />
       </CSVLink>
     )

@@ -38,11 +38,11 @@ function MapModal({ isOpen, setIsOpen, countryData }) {
       isOpen={isOpen}
       style={customStyles}>
 
-      <div id="modal-wrapper">
+      <div id='modal-wrapper'>
 
         <p id='modal-header-text'>{countryData.name}</p>
 
-        <div id="map-frame">
+        <div id='map-frame'>
 
           {/* Exibir placeholder se não estiver carregado */}
           {!isMapLoaded && <PagePlaceholder />}
@@ -57,7 +57,7 @@ function MapModal({ isOpen, setIsOpen, countryData }) {
 
         </div>
 
-        <Button label="Sair" onClick={() => setIsOpen(false)} />
+        <Button label='Sair' onClick={() => setIsOpen(false)} />
 
       </div>
 
