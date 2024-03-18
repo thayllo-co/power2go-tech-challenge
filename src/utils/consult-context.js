@@ -27,7 +27,7 @@ export const ConsultContextProvider = ({ children }) => {
     setSearchText('');
     httpGetRequest('all')
       .then(data => {
-        handleAPIResponse(data);
+        handleAPIResponse(data, null);
         setIsLoading(false);
       });
   }
@@ -47,7 +47,7 @@ export const ConsultContextProvider = ({ children }) => {
       setIsLoading(true);
       httpGetRequest('name/' + name)
         .then(data => {
-          handleAPIResponse(data);
+          handleAPIResponse(data, name);
           setIsLoading(false);
         });
     } else {
@@ -57,13 +57,13 @@ export const ConsultContextProvider = ({ children }) => {
 
 
   // Função que trata dos dados de resposta da API
-  const handleAPIResponse = data => {
+  const handleAPIResponse = (data, search) => {
     // Verifica se a pesquisa retornou dados
     if (data?.length > 0) {
 
       // Adiciona busca ao histórico se houver texto pesquisado
-      if (searchText) {
-        addSearchToHistoric(searchText, data.length);
+      if (search) {
+        addSearchToHistoric(search, data.length);
       }
 
       // Loop pelo array de respostas para formatar os dados
