@@ -1,9 +1,0 @@
-#historic-wrapper {
-    display: flex;
-    flex-flow: column;
-    height: 100svh;
-}
-
-#historic-table {
-    padding: 8px;
-}

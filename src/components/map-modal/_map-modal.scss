@@ -1,0 +1,15 @@
+#modal-wrapper {
+  @include flex-box(true, center, unset);
+
+  p {
+    @include typography(false, true, 'm');
+    color: $primary-color;
+    margin: 0 0 10px 0;
+  }
+
+  #map-frame {
+    height: 50vh;
+    width: 70vw;
+    margin: $spacing-lg 0;
+  }
+}

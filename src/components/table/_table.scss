@@ -1,0 +1,27 @@
+#table-row {
+  @include flex-box(false);
+  @include typography(false, false, 'm');
+  margin: 0;
+
+  #table-cell {
+    min-width: 150px;
+    display: flex;
+    justify-content: center;
+    border: 0.5px solid black;
+
+    #table-text {
+      margin: auto;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 0 $spacing-sm;
+    }
+  }
+
+  .table-heading {
+    background-color: $primary-color;
+    font-weight: 700;
+    color: white;
+  }
+}

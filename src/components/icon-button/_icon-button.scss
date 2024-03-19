@@ -1,0 +1,17 @@
+.icon-button {
+  @include flex-box;
+  background-color: $primary-color;
+  height: 26px;
+  width: 26px;
+  margin: 0 $spacing-sm;
+  padding: 0;
+  border-radius: $radius-size;
+  border: none;
+  cursor: pointer;
+
+  img {
+    height: 14px;
+    width: 14px;
+    margin: auto;
+  }
+}

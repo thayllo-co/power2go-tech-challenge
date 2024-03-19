@@ -1,4 +1,3 @@
-import './header.css';
 import { Link } from 'react-router-dom';
 import back from '../../assets/back.png';
 
@@ -10,11 +9,11 @@ const Header = ({ title, parentPath }) => {
 
       <Link to={parentPath}>
 
-        <img src={back} id='icon-back-navigation' alt='Navigate back icon' />
+        <img src={back} alt='Navigate back icon' />
 
       </Link>
 
-      <p id='header-title'>{title}</p>
+      <p>{title}</p>
 
     </div>
   )

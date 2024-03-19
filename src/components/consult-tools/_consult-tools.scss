@@ -1,0 +1,38 @@
+#tools-wrapper {
+  @include flex-box;
+  padding: $spacing 0;
+
+  #options-wrapper {
+    @include flex-box(false, center, center);
+    margin-left: $spacing-sm;
+
+    img,
+    input {
+      width: 18px;
+      height: 18px;
+      margin: auto 0 auto $spacing-sm;
+    }
+
+    label {
+      @include flex-box;
+      span {
+        margin: auto $spacing-sm auto $spacing-sm;
+      }
+    }
+  }
+
+  #search-wrapper {
+    @include flex-box;
+    flex: 1;
+    margin: 0 $spacing-sm;
+  }
+}
+
+@media (max-width: 550px) {
+  #tools-wrapper {
+    @include flex-box(true);
+  }
+  #options-wrapper {
+    margin-bottom: $spacing;
+  }
+}

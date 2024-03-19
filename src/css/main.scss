@@ -1,0 +1,19 @@
+@import 'base';
+@import 'libs';
+
+// pages
+@import '../pages/home/home';
+@import '../pages/consult/consult';
+@import '../pages/historic/historic';
+
+// components
+@import '../components/button/button';
+@import '../components/header/header';
+@import '../components/consult-tools/consult-tools';
+@import '../components/icon-button/icon-button';
+@import '../components/text-input/text-input';
+@import '../components/page-placeholder/page-placeholder';
+@import '../components/table/table.scss';
+@import '../components/card/card';
+@import '../components/map-modal/map-modal';
+@import '../components/consult-footer/consult-footer';

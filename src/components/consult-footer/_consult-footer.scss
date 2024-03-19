@@ -1,0 +1,4 @@
+#consult-buttons-wrapper {
+  @include flex-box(false, unset, space-evenly);
+  background-color: $primary-color;
+}

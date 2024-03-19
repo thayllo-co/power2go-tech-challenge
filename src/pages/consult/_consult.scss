@@ -1,0 +1,16 @@
+#consult-wrapper {
+  @include flex-box(true);
+  height: 100svh;
+
+  #consult-content {
+    flex: 1 1 auto;
+  }
+
+  .table {
+    padding: 0 $spacing;
+  }
+
+  .cards {
+    padding: 0 $spacing-sm;
+  }
+}

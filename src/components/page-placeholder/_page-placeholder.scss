@@ -1,0 +1,13 @@
+#placeholder-wrapper {
+  @include flex-box(true, center, center);
+  height: 100%;
+  width: 100%;
+
+  img {
+    width: 300px;
+  }
+
+  p {
+    @include typography(false, false, 'g');
+  }
+}

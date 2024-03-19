@@ -1,8 +1,8 @@
-import './button.css';
 import { Link } from 'react-router-dom';
 import { CSVLink } from 'react-csv';
 import historic from '../../assets/historic.png';
 import exporting from '../../assets/export.png';
+import { toast } from 'react-toastify';
 
 
 const Button = ({ label, type, onClick, linkPath, exportContent }) => {
@@ -21,14 +21,15 @@ const Button = ({ label, type, onClick, linkPath, exportContent }) => {
   // Verifica se o botão é de exportação ou navegação
   if (type === 'export' && exportContent?.length > 0) {
     return (
-      <CSVLink className='button-link' data={exportContent} separator={'|'} filename={'Search_Results_' + Date.now()}>
+      <CSVLink className='undecorated-text' data={exportContent} separator={'|'} filename={'Search_Results_' + Date.now()}
+        onClick={() => toast.info('Preparando arquivo para download')} >
         <ButtonContent />
       </CSVLink>
     )
   }
   else {
     return (
-      <Link className='button-link' to={linkPath}>
+      <Link className='undecorated-text' to={linkPath}>
         <ButtonContent />
       </Link>
     )

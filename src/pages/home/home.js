@@ -1,4 +1,3 @@
-import './home.css';
 import Button from '../../components/button/button';
 import logo from '../../assets/logo.png';
 import globe from '../../assets/globe.png';
@@ -8,15 +7,15 @@ const Home = () => {
   return (
     <div id='home-wrapper'>
 
-      <img id='logo' src={logo} alt='logo' />
+      <img src={logo} alt='logo' />
 
-      <div id='home-content'>
+      <div>
 
-        <img id='globe' src={globe} alt='Globe' />
+        <img src={globe} alt='Globe' />
 
-        <p className='light-header'>Desafio Técnico - ReactJs</p>
+        <p>Desafio Técnico - ReactJs</p>
 
-        <p className='light-header'>Consultar Países</p>
+        <p>Consultar Países</p>
 
       </div>
 

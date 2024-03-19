@@ -1,0 +1,10 @@
+#historic-wrapper {
+  @include flex-box(true);
+  height: 100svh;
+
+  #historic-table {
+    flex: 1 1 auto;
+    padding: $spacing;
+    overflow: auto;
+  }
+}

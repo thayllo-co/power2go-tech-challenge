@@ -1,4 +1,3 @@
-import './consult-tools.css';
 import { useContext } from 'react';
 import { ConsultContext } from '../../utils/consult-context';
 import IconButton from '../icon-button/icon-button';

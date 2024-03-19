@@ -1,0 +1,90 @@
+$font-family: 'Montserrat', sans-serif;
+$primary-color: #001e4d;
+$secondary-color: #ffc221;
+$light-text: white;
+$dark-text: black;
+$shadow-color: #00000029;
+$spacing-sm: 4px;
+$spacing: 8px;
+$spacing-lg: 16px;
+$radius-size: 25px;
+$radius-size-sm: 6px;
+
+@mixin typography($is-light: true, $is-heading: false, $size: 'p') {
+  font-family: $font-family;
+  margin: 8px;
+  font-weight: 400;
+
+  @if $is-light {
+    color: $light-text;
+  } @else {
+    color: $dark-text;
+  }
+
+  @if $is-heading {
+    font-weight: 600;
+    @if $size == 'p' {
+      font-size: 20px;
+    } @else if $size == 'm' {
+      font-size: 24px;
+    } @else if $size == 'g' {
+      font-size: 28px;
+    }
+  } @else {
+    @if $size == 'p' {
+      font-size: 14px;
+    } @else if $size == 'm' {
+      font-size: 16px;
+    } @else if $size == 'g' {
+      font-size: 18px;
+    }
+  }
+}
+
+@mixin flex-box($is-column: false, $items-alignment: unset, $items-justification: unset) {
+  display: flex;
+  align-items: $items-alignment;
+  justify-content: $items-justification;
+
+  @if $is-column {
+    flex-flow: column;
+  } @else {
+    flex-flow: row;
+  }
+}
+
+@mixin elevated-box {
+  border-radius: $radius-size;
+  box-shadow: 0 3px 6px $shadow-color;
+}
+
+@mixin outlined-box {
+  border-radius: $radius-size-sm;
+  border: 1px solid $primary-color;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family;
+}
+
+#loader {
+  height: 8px;
+  width: 8px;
+  padding: 0;
+  margin: auto;
+  border: 4px solid $primary-color;
+  border-top: 4px solid $secondary-color;
+  border-bottom: 4px solid $secondary-color;
+  border-radius: 100px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

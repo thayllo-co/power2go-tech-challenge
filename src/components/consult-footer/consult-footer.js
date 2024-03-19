@@ -1,5 +1,3 @@
-
-import './consult-footer.css';
 import Button from '../button/button';
 
 

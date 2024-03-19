@@ -1,0 +1,39 @@
+#card-wrapper {
+  @include elevated-box;
+  @include flex-box(true, center, space-between);
+  background-color: $secondary-color;
+  padding: $spacing;
+  margin: $spacing-sm;
+  cursor: pointer;
+  height: 266px;
+
+  #name {
+    @include typography(false, true, 'p');
+    margin: 0;
+  }
+
+  #capital {
+    @include typography(false, false, 'p');
+    font-style: italic;
+    margin: 0;
+  }
+
+  #flag {
+    height: 100px;
+    width: 150px;
+    margin-top: $spacing;
+  }
+
+  .info-row {
+    @include flex-box(false, center, center);
+
+    img {
+      height: 15px;
+      width: auto;
+    }
+
+    p {
+      @include typography(false, false, 'p');
+    }
+  }
+}

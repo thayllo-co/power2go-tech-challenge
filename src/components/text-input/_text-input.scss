@@ -1,0 +1,7 @@
+#text-input {
+  @include outlined-box;
+  @include typography(false, false, 'p');
+  margin: 0 $spacing-sm;
+  padding: 0 0 0 $spacing-sm;
+  flex: 1;
+}

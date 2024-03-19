@@ -1,4 +1,3 @@
-import './map-modal.css';
 import { useState } from 'react';
 import GoogleMapReact from 'google-map-react';
 import Modal from 'react-modal';
@@ -8,7 +7,7 @@ import { GOOGLE_API_KEY } from '../../utils/consts';
 Modal.setAppElement('#root');
 
 
-function MapModal({ isOpen, setIsOpen, countryData }) {
+const MapModal = ({ isOpen, setIsOpen, countryData }) => {
 
   // Hook para rastrear quando o mapa é carregado
   const [isMapLoaded, setIsMapLoaded] = useState(false);
@@ -40,7 +39,7 @@ function MapModal({ isOpen, setIsOpen, countryData }) {
 
       <div id='modal-wrapper'>
 
-        <p id='modal-header-text'>{countryData.name}</p>
+        <p>{countryData.name}</p>
 
         <div id='map-frame'>
 

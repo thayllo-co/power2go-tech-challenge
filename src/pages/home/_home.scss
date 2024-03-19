@@ -1,0 +1,18 @@
+#home-wrapper {
+  @include flex-box(true, center);
+  justify-content: space-evenly;
+  background-color: $primary-color;
+  height: 100svh;
+
+  img {
+    max-width: 250px;
+  }
+
+  div {
+    @include flex-box(true, center);
+  }
+
+  p {
+    @include typography(true, true, 'm');
+  }
+}

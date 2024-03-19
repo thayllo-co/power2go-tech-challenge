@@ -1,4 +1,3 @@
-import './historic.css';
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ConsultContext } from '../../utils/consult-context';

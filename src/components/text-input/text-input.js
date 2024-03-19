@@ -1,11 +1,9 @@
-import './text-input.css';
 
-
-function TextInput({ hint, value, setValue, onPressEnter }) {
+const TextInput = ({ hint, value, setValue, onPressEnter }) => {
   // Isolamento do componente que trata da entrada de texto
   return (
     <input
-      className='text-input'
+      id='text-input'
       placeholder={hint}
       value={value}
       onChange={e => setValue(e.target.value)}
