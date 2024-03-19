@@ -1,4 +1,5 @@
 # Desafio Técnico React - Power2Go
+Aplicação React desenvolvida para atender ao desafio técnico proposto pela Power2Go.
 
 ### [VEJA ONLINE AQUI](https://power2go-tech-challenge.web.app/)
 
