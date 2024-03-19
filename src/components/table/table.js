@@ -1,44 +1,45 @@
-import './table.css';
+import AutoSizer from 'react-virtualized-auto-sizer';
+import { FixedSizeList } from 'react-window';
 
-function Table({ content }) {
-  // Percorre o array content para construir a tabela
+
+const Table = ({ content }) => {
   return (
-    <div id='table-wrapper'>
+    // AutoSizer para dimensionar o tamanho da tabela
+    <AutoSizer>
+      {({ height, width }) => {
 
-      <table>
+        // Calcula a largura da coluna com base no cabeçalho
+        let dynamicColumnWidth = width / Object.keys(content[0]).length;
+        dynamicColumnWidth = dynamicColumnWidth > 150 ? dynamicColumnWidth : '150px';
 
-        <thead>
-
-          {content?.map((item = {}, i) => {
-            if (i === 0) // Condição para verificar se é cabeçalho
-              return (
-                <tr key={i}>
-                  {Object.keys(item).map(key => <th key={key}>{item[key]}</th>)}
-                </tr>
-              )
-          })}
-
-        </thead>
-
-        <tbody>
-
-          {content?.map((item, i) => {
-            if (i !== 0) // Condição para verificar se é corpo
-              return (
-                <tr key={i}>
-                  {Object.keys(item).map(key => {
-                    // Filtro para bandeira ou coordenadas
-                    if (key !== 'flag' && key !== 'coordinates')
-                      return (<td key={key}>{item[key]}</td>)
-                  })}
-                </tr>
-              )
-          })}
-        </tbody>
-
-      </table>
-
-    </div>
+        return (
+          <FixedSizeList // Componente react-window com seus parâmetros configurados
+            width={width}
+            height={height}
+            itemCount={content?.length}
+            itemSize={30}
+            style={{ scrollbarWidth: 'none' }}
+          >
+            {({ index, style }) => (  // função callback anônima para renderizar as linhas
+              <div id='table-row' key={index} style={style}>
+                {Object.keys(content[index]).map(key => {
+                  // Filtro para bandeira ou coordenadas
+                  if (key !== 'flag' && key !== 'coordinates')
+                    return (
+                      <div
+                        id='table-cell' key={key} style={{ width: dynamicColumnWidth }}
+                        className={index === 0 ? 'table-heading' : ''}>
+                        <p id="table-text">{content[index][key]}</p>
+                      </div>
+                    )
+                })}
+              </div>
+            )
+            }
+          </FixedSizeList>
+        )
+      }}
+    </AutoSizer >
   )
 }
 

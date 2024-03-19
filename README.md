@@ -29,6 +29,8 @@ npm start
  + [react-modal](https://github.com/reactjs/react-modal)
  + [react-router-dom](https://github.com/remix-run/react-router)
  + [react-toastify](https://github.com/fkhadra/react-toastify)
+ + [react-window](https://github.com/bvaughn/react-window)
+ + [react-virtualized-auto-sizer](https://github.com/bvaughn/react-virtualized-auto-sizer)
 
 ## Estrutura de Arquivos
 
